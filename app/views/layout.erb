@@ -4,12 +4,17 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div class="container-fluid">
+      <ul class="nav navbar">
     <% if logged_in? %>
-      <a href="/logout">Log Out</a>
+      <li><a href="/logout">Log Out</a></li>
+      <li><a href="/users/<%=current_user.id %>">Profile</a></li>
       <% else %>
-      <a href="/login">Login</a>
+      <li><a href="/login">Login</a></li>
       <% end %>
-    
+    </ul>
+    </div>
+
     <%= yield %>
   </body>
 </html>
